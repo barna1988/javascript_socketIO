@@ -21,6 +21,17 @@ function joinChannel(event, socket) {
 
 }
 
+function register(event, socket) {
+	event.preventDefault();
+	let username = document.getElementById('username').value;
+	let channel = document.getElementById('newchannel').value;
+
+	if (channel) {
+		socket.emit('register', { username, channel });
+	}
+
+}
+
 function leaveChannel(event, socket) {
 	event.preventDefault();
 	let channel = document.getElementById('newchannel').value;
@@ -108,6 +119,7 @@ function generateAlertMsgTemplate(msg) {
 
 
 module.exports = {
+	register,
 	sendMessage,
 	joinChannel,
 	leaveChannel,

@@ -2,6 +2,7 @@ const script = require('../public/js/script.js');
 const expect = require('chai').expect;
 const EventEmitter = require('events');
 const jsdom = require('mocha-jsdom');
+const describe = require('describe');
 
 describe('Socket Client', () => {
   jsdom();
